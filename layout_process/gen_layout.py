@@ -91,3 +91,10 @@ def assign_layout(layout_x, layout_y,pad_x=30,pad_y=40):
             rects.append({'x1':xs[0],'x2':xs[1],'y1':ys[0],'y2':ys[1]})
 
     return rects
+
+def gen_layout(pad_x=30, pad_y=40):
+    layout_x, layout_y = generate_ratio()
+    layout_x, layout_y = drop_ratio(layout_x,layout_y)
+    rects = assign_layout(layout_x, layout_y,pad_x,pad_y)
+    
+    return rects
