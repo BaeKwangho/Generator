@@ -3,6 +3,7 @@ import argparse
 import os, errno
 import sys
 sys.path.append('../')
+import tqdm
 
 import Generator.layout_process.gen_layout as gl
 from Generator.data_process.data_loader import DataLoader
@@ -75,18 +76,29 @@ def main():
         dataloader = DataLoader(None,args.back_ground_file)
     
     json = []
+    
+    #init progress bar
+    outer = tqdm.tqdm(total=args.iteration,desc='  iter',position=0)
+    
     for i in range(args.iteration):
-        
         #define file name as current unix time
         time_file_name = str(time.time()).replace('.','')
         
+        #generate layout
         rects = gl.gen_layout()
+        
+        #bbox dictionary & output img generation 
         sentences, palette = gb.gen_box(dataloader, rects)
         palette.save(os.path.join(args.output_dir,time_file_name+'.png'))
+        
+        #attach to json file which will be saved as pkl file
         temp = { '{}.png'.format(time_file_name):sentences }
         json.append(temp)
+        
+        outer.update(1)
     with open(os.path.join(args.output_dir,'trial.pkl'),'wb') as f:
         pickle.dump(json,f)
+    time.sleep(1)
     
 
 if __name__ == "__main__":
