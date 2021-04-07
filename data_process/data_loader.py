@@ -3,8 +3,15 @@ import os
 
 class DataLoader(object):
     def __init__(self, text_dir, bg_file):
-        self.text_list = self.prepare_text(text_dir)
-        self.bg_file = self.prepare_bg(bg_file)
+        if text_dir==None:
+            self.gen_mode = True
+            with open('./asset/dict/ko_word.txt','r') as f:
+                self.text_list = f.readlines()
+            self.bg_file = self.prepare_bg(bg_file)
+        else:
+            self.gen_mode = False
+            self.text_list = self.prepare_text(text_dir)
+            self.bg_file = self.prepare_bg(bg_file)
 
     def prepare_text(self,text_dir):
         text_list = []
