@@ -12,8 +12,8 @@
 * PIL.Image
 
 ## Run
-* '''python run.py'''
-* '''python run.py -t ./sample_text_imgs''' (if you have text image files with trdg)
+* ```python run.py```
+* ```python run.py -t ./sample_text_imgs``` (if you have text image files with trdg)
 
 ## Image file dir
 * You need to fill follow directory with image files.
