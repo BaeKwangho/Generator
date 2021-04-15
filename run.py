@@ -5,14 +5,13 @@ import sys
 sys.path.append('../')
 import tqdm
 
-import Generator.layout_process.gen_layout as gl
-from Generator.data_process.data_loader import DataLoader
-import Generator.layout_process.gen_box as gb
+import layout_process.gen_layout as gl
+from data_process.data_loader import DataLoader
+import layout_process.gen_box as gb
 import pickle
 import time
 
 def parse_arguments():
-    
     parser = argparse.ArgumentParser(
         description="Generate synthetic pdf data for text recognition."
     )
