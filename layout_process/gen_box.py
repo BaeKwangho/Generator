@@ -6,7 +6,6 @@ import os
 from trdg.generators import GeneratorFromStrings
 
 def gen_box(dataloader, rects, title, count=40, contents_img_path="layout_process/contents_img"):
-    
     text_list, palette = dataloader.use_set()
     palette = copy.deepcopy(palette)
     sentences = []

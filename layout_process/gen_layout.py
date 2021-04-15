@@ -57,7 +57,6 @@ def assign_layout(layout_x, layout_y,pad_x=30,pad_y=40):
     pad_y = np.random.randint(10) + pad_y
 
     pad = {'x':pad_x,'y':pad_y}
-
     paper = {'x':1500,'y':2400}
     margin = {"up":0.25, "side":0.2, "down":0.1}
 
