@@ -6,10 +6,6 @@
 */__pycache__
 *.ipynb
 
-
-# ignore png files
-*.png
-
 # empty directory
 ! sample_text_imgs/.keep
 ! layout_precess/contents_img/.keep
