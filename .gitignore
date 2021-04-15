@@ -9,5 +9,3 @@
 
 # ignore png files
 *.png
-sample_text_imgs/data/*.png
-layout_process/contents_img/*.png
