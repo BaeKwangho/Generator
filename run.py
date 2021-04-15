@@ -12,7 +12,6 @@ import pickle
 import time
 
 def parse_arguments():
-    
     parser = argparse.ArgumentParser(
         description="Generate synthetic pdf data for text recognition."
     )
